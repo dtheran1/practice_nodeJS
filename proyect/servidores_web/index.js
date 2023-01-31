@@ -1,14 +1,24 @@
 const express = require('express')
 
-const data = require('./MOCK_DATA.json')
+const Service = require('./src/service')
 
 const app = express()
 const puert = 3000
 
+app.use(express.json())
+
 app.get('/', (req, res) => {
   res.json({
     message: 'Lista de users',
-    body: data
+    body: Service.getUsers()
+  })
+})
+
+app.post('/', (req, res) => {
+  const { body: newUser } = req
+  res.status(201).json({
+    message: 'Usuario agregado exitosamente',
+    body: Service.createUser(newUser)
   })
 })
 
