@@ -1,0 +1,18 @@
+{
+  "name": "servidores_web",
+  "version": "1.0.0",
+  "description": "Servidores Web en Node Js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
