@@ -15,7 +15,7 @@ const getById = async (id) => {
 
 const create = async(product) => {
   const collection = await Database(COLLECTION);
-  let result = collection.insertOne(product) //Metodos de mongoDB
+  let result = await collection.insertOne(product) //Metodos de mongoDB
   return result.insertedId
 }
 
