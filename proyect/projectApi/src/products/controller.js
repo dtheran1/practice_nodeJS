@@ -1,5 +1,5 @@
 const createError = require('http-errors');
-const { ProductsService: { create, getAll, getById } } = require('./services');
+const { ProductsService: { create, getAll, getById, generateReport } } = require('./services');
 const { Response: { success, error } } = require('../common/response');
 const debug = require('debug')('app:module-products-controller');
 
@@ -47,5 +47,18 @@ module.exports.ProductsController = {
       error(res)
     }
   },
+
+  // update
+
+  // delete
+
+  generateReports: (req, res) => {
+    try {
+      generateReport('Inventario', res)
+    } catch (error) {
+      debug(error)
+      error(res)
+    }
+  }
 
 }
